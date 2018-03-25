@@ -9,7 +9,7 @@ def main():
 
     setuptools.setup(
         name             = "lock",
-        version          = "2018.03.08.1911",
+        version          = "2018.03.25.2110",
         description      = "module for enabling file locks",
         long_description = long_description(),
         url              = "https://github.com/wdbm/lock",

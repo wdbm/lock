@@ -36,7 +36,7 @@ import fcntl
 import json
 import time
 
-__version__ = "2018-03-08T1911Z"
+__version__ = "2018-03-25T2110Z"
 
 def lock(filepath):
     lock_file = open(filepath, "a")
@@ -54,10 +54,10 @@ def unlock(filepath):
         return error
     return lock_file
 
-def save_JSON(filepath, dictionary, hang_until_unlocked = True):
+def save_JSON(filepath, dictionary, hang_until_unlocked = True, indent = 4):
     if lock(filepath):
         with open(filepath, "w") as file_JSON:
-            json.dump(dictionary, file_JSON)
+            json.dump(dictionary, file_JSON, indent = indent)
         unlock(filepath)
         return True
     elif hang_until_unlocked:
